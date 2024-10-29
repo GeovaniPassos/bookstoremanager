@@ -5,8 +5,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class Author {
 
@@ -19,39 +27,6 @@ public class Author {
     
     @Column(nullable = false)
     private Integer age;
-
-    public Long getId() {
-        return id;
-    }
-
-    
-    //Constructor
-    public Author(Long id, String name, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-    }
-
-    //Getter and Setters
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     
 }
